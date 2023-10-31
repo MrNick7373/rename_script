@@ -1,3 +1,4 @@
 *.txt
 *.jpg
 .vs/
+*/__pycache__/

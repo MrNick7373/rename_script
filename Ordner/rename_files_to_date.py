@@ -1,5 +1,4 @@
-import time, sys
-from pathlib import Path
+import sys, time
 from rename_lib import *
 
 def create_name_from_modification_date(path: Path) -> str:
@@ -8,12 +7,9 @@ def create_name_from_modification_date(path: Path) -> str:
     time_str = f"{to_str(date.tm_hour)}{to_str(date.tm_min)}{to_str(date.tm_sec)}"
     return f"{date_str}_{time_str}"
 
-def create_new_path(path: Path, name_prefix: str) -> Path:
-    return create_path(path, create_name_from_modification_date(path), name_prefix)
-
 def rename_files_to_date(path_list: list[Path], name_prefix: str):
     for path in path_list:
-        rename_file(path, create_new_path(path, name_prefix))
+        rename_file(path, create_path(path, create_name_from_modification_date(path), name_prefix))
 
 if __name__ == "__main__":
     args = sys.argv[1:]

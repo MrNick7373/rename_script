@@ -1,5 +1,4 @@
 import sys
-from pathlib import Path
 from rename_lib import *
 
 def rename_files_ascending(path_list: list[Path], name_prefix: str):
