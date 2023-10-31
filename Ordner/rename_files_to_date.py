@@ -13,8 +13,10 @@ def create_name_from_creation_date(path: Path, name_prefix: str) -> str:
     time_str = f"{to_str(date.tm_hour)}{to_str(date.tm_min)}{to_str(date.tm_sec)}"
     return f"{path.parent}\\{name_prefix}{date_str}_{time_str}{path.suffix}"
 
-def rename_files_to_date(directory: Path, name_prefix: str):
-    path_list = [Path(os.path.join(directory, file)) for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]
+def get_files_from_directory(directory: Path) -> list[Path]:
+    return [Path(os.path.join(directory, file)) for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]
+
+def rename_files_to_date(path_list: list[Path], name_prefix: str):
     for path in path_list:
         if path == Path(__file__):
             continue
@@ -30,4 +32,4 @@ if __name__ == "__main__":
     default_prefix = ""
     if len(args) > 0:
         default_prefix = args[0]
-    rename_files_to_date(Path(__file__).parent, default_prefix)
+    rename_files_to_date(get_files_from_directory(Path(__file__).parent), default_prefix)
