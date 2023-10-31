@@ -4,4 +4,4 @@
 *.mp3
 *.wma
 .vs/
-*/__pycache__/
+__pycache__/
