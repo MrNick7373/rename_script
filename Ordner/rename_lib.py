@@ -14,9 +14,7 @@ def get_files_from_directory(directory: Path = Path(__file__).parent) -> list[Pa
     return [Path(os.path.join(directory, file)) for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]
 
 def rename_file(old_path: Path, new_path: Path):
-    if old_path == Path(__file__):
-        return
-    if new_path.exists():
+    if new_path.exists() or old_path.suffix == ".py":
         print(f"skipped >{old_path.stem}{old_path.suffix}<")
     else:
         print(f"renamed >{old_path.stem}{old_path.suffix}< to >{new_path.stem}{new_path.suffix}<")
