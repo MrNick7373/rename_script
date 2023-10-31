@@ -1,4 +1,7 @@
 *.txt
 *.jpg
+*.png
+*.mp3
+*.wma
 .vs/
 */__pycache__/
