@@ -16,16 +16,18 @@ def create_name_from_creation_date(path: Path, name_prefix: str) -> str:
 def get_files_from_directory(directory: Path = Path(__file__).parent) -> list[Path]:
     return [Path(os.path.join(directory, file)) for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]
 
+def rename_file(old_path: Path, new_path: Path):
+    if old_path == Path(__file__):
+        return
+    if new_path.exists():
+        print(f"skipped >{old_path.stem}{old_path.suffix}<")
+    else:
+        print(f"renamed >{old_path.stem}{old_path.suffix}< to >{new_path.stem}{new_path.suffix}<")
+        old_path.rename(new_path)
+
 def rename_files_to_date(path_list: list[Path], name_prefix: str):
     for path in path_list:
-        if path == Path(__file__):
-            continue
-        new_path = Path(create_name_from_creation_date(path, name_prefix))
-        if new_path.exists():
-            print(f"skipped >{path.stem}{path.suffix}<")
-        else:
-            print(f"renamed >{path.stem}{path.suffix}< to >{new_path.stem}{new_path.suffix}<")
-            path.rename(new_path)
+        rename_file(path, Path(create_name_from_creation_date(path, name_prefix)))
 
 if __name__ == "__main__":
     args = sys.argv[1:]
