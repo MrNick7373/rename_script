@@ -1,6 +1,14 @@
 import os
 from pathlib import Path
 
+def to_str_3digits(number: int) -> str:
+    if number < 10:
+        return f"00{number}"
+    if number < 100 and number >= 10:
+        return f"0{number}"
+    else:
+        return f"{number}"
+
 def to_str(number: int) -> str:
     if number < 10:
         return f"0{number}"
