@@ -2,7 +2,7 @@ import sys
 from rename_lib import *
 
 def rename_files_ascending(path_list: list[Path], name_prefix: str):
-    index: int = 0;
+    index: int = 0
     for path in path_list:
         rename_file(path, create_path(path, f"{to_str(index)}", name_prefix))
         index += 1
