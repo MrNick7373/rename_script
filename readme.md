@@ -19,7 +19,9 @@
 -> 'rename_files_ascending.py IMG_' results in files been called 'IMG_NNN'
 
 ## equalise_file_name_length.py
-- extends or truncates the file name to 6 charakters
+- extends or truncates the file name to 6 (default) charakters
 - if the name contains any '_', the last section will be modified:  
 'ABC_DE_123456789' -> 'ABC_DE_123456'  
-'ABC_1234' -> 'ABC_123400'
+'1234' -> '123400'
+- if called from the terminal, the first optional argument declares the number of digits and the second the prefix:  
+-> 'equalise_file_name_length.py 4 IMG_' renames a file from 'ABC_1' to 'IMG_ABC_1000'
