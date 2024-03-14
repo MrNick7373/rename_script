@@ -4,8 +4,8 @@ from rename_lib import *
 def rename_files_ascending(path_list: list[Path], name_prefix: str):
     index: int = 0
     for path in path_list:
-        if(rename_file(path, create_path(path, f"{to_str_3digits(index)}", name_prefix))):
-            index += 1
+        rename_file(path, create_path(path, f"{to_str_3digits(index)}", name_prefix))
+        index += 1
 
 if __name__ == "__main__":
     args = sys.argv[1:]
