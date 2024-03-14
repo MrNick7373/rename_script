@@ -1,20 +1,12 @@
 import os
 from pathlib import Path
 
-def to_str_3digits(number: int) -> str:
-    if number < 10:
-        return f"00{number}"
-    if number < 100 and number >= 10:
-        return f"0{number}"
-    else:
-        return f"{number}"
+def index_to_str(index: int, number_of_files: int) -> str:
+    index_str: str = f"{index}"
+    while len(index_str) < len(f"{number_of_files}"):
+        index_str = "0" + index_str
+    return index_str
 
-def to_str(number: int) -> str:
-    if number < 10:
-        return f"0{number}"
-    else:
-        return f"{number}"
-    
 def create_path(path: Path, name: str, name_prefix: str = "") -> Path:
     return Path(f"{path.parent}\\{name_prefix}{name}{path.suffix}")
 

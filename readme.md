@@ -14,9 +14,9 @@
 
 ## rename_files_ascending.py
 - renames the file ascendingly
-- in the format: NNN
+- the number of leading zeros depends on the number of files
 - if called from the terminal, a prefix can be declared:  
--> 'rename_files_ascending.py IMG_' results in files been called 'IMG_NNN'
+-> 'rename_files_ascending.py IMG_' results in files been called 'IMG_NNN' if more than 99 files are edited
 
 ## equalise_file_name_length.py
 - extends or truncates the file name to 6 (default) charakters

@@ -1,5 +1,11 @@
-import sys, time
+import os, sys, time
 from rename_lib import *
+
+def to_str(number: int) -> str:
+    if number < 10:
+        return f"0{number}"
+    else:
+        return f"{number}"
 
 def create_name_from_modification_date(path: Path) -> str:
     date = time.gmtime(os.path.getmtime(path))
