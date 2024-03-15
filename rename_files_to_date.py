@@ -19,7 +19,7 @@ def rename_files_to_date(path_list: list[Path], name_prefix: str):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    default_prefix = ""
+    default_prefix: str = ""
     if len(args) > 0:
         default_prefix = args[0]
     rename_files_to_date(get_files_from_directory(), default_prefix)

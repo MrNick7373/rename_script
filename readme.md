@@ -13,9 +13,9 @@
 -> 'rename_files_to_date.py IMG_' results in files been called 'IMG_YYYYMMDD_HHMMSS'
 
 ## rename_files_ascending.py
-- renames the file ascendingly
+- renames the file ascendingly, starting with 0 by default
 - the number of leading zeros depends on the number of files
-- if called from the terminal, a prefix can be declared:  
+- if called from the terminal, the first optional argument declares the prefix and the second the starting index:  
 -> 'rename_files_ascending.py IMG_' results in files been called 'IMG_NNN' if more than 99 files are edited
 
 ## equalise_file_name_length.py

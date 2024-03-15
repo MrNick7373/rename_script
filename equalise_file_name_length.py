@@ -26,8 +26,8 @@ def equalise_file_name_length(path_list: list[Path], default_prefix: str, digits
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    default_digits = 6
-    default_prefix = ""
+    default_digits: int = 6
+    default_prefix: str = ""
     if len(args) > 0:
         default_digits = int(args[0])
     if len(args) > 1:
