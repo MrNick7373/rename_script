@@ -5,3 +5,4 @@
 *.wma
 .vs/
 __pycache__/
+*.exe

@@ -10,7 +10,7 @@ def create_path(path: Path, name: str, name_prefix: str = "") -> Path:
     return Path(f"{path.parent}\\{name_prefix}{name}{path.suffix}")
 
 def is_valid_file(path: Path) -> bool:
-    skip_suffix: list[str] = [".py", ".md", ".gitignore"]
+    skip_suffix: list[str] = [".py", ".md", ".gitignore", ".bat"]
     skip_name: list[str] = [".gitignore"]
     if skip_suffix.count(path.suffix) != 0 or skip_name.count(path.name) != 0:
         return False
