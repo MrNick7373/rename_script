@@ -20,8 +20,7 @@ def is_valid_file(path: Path) -> bool:
 def get_files_from_directory(directory: Path = Path(__file__).parent) -> list[Path]:
     #return [Path(os.path.join(directory, file)) for file in os.listdir(directory) if (os.path.isfile(os.path.join(directory, file)) and is_valid_file(Path(os.path.join(directory, file))))]
     paths: list[Path] = []
-    for file in directory.iterdir():
-        path: Path = directory / file
+    for path in directory.iterdir():
         if path.is_file() and is_valid_file(path):
             paths.append(path)
     return paths
